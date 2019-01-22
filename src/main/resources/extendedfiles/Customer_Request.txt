@@ -1,0 +1,6 @@
+{
+    "firstName": "${firstName}",
+    "lastName": "${lastName}",
+    "age": ${age},
+    "city": "${city}"
+}

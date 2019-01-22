@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="IC" duration-ms="2464" started-at="2018-11-13T06:12:23Z" finished-at="2018-11-13T06:12:25Z">
+    <groups>
+    </groups>
+    <test name="Window1" duration-ms="2464" started-at="2018-11-13T06:12:23Z" finished-at="2018-11-13T06:12:25Z">
+      <class name="com.bdd.utilities.Runner">
+        <test-method status="PASS" signature="beforeSuite(org.testng.ITestContext)[pri:0, instance:com.bdd.utilities.Runner@5383967b]" name="beforeSuite" is-config="true" duration-ms="233" started-at="2018-11-13T01:12:22Z" finished-at="2018-11-13T01:12:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@120d40fe]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeTest(org.testng.ITestContext, java.lang.String, java.lang.String)[pri:0, instance:com.bdd.utilities.Runner@5383967b]" name="beforeTest" is-config="true" duration-ms="142" started-at="2018-11-13T01:12:23Z" finished-at="2018-11-13T01:12:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@120d40fe]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[/restService.feature]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[@SmokeTest]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="runCuke(org.testng.ITestContext)[pri:0, instance:com.bdd.utilities.Runner@5383967b]" name="runCuke" duration-ms="2307" started-at="2018-11-13T01:12:23Z" finished-at="2018-11-13T01:12:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@120d40fe]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCuke -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.bdd.utilities.Runner@5383967b]" name="afterTest" is-config="true" duration-ms="8" started-at="2018-11-13T01:12:25Z" finished-at="2018-11-13T01:12:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.bdd.utilities.Runner@5383967b]" name="afterSuite" is-config="true" duration-ms="338" started-at="2018-11-13T01:12:25Z" finished-at="2018-11-13T01:12:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.bdd.utilities.Runner -->
+    </test> <!-- Window1 -->
+  </suite> <!-- IC -->
+</testng-results>
