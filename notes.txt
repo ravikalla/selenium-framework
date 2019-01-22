@@ -1,0 +1,113 @@
+<CREATE MAVEN PROJECT>
+Add below in pom.xml
+…
+<cucumber.spring>1.2.5</cucumber.spring>
+…
+<dependency>
+<groupId>info.cukes</groupId>
+<artifactId>cucumber-java</artifactId>
+<version>${cucumber.spring}</version>
+<scope>test</scope>
+</dependency>
+
+<dependency>
+<groupId>info.cukes</groupId>
+<artifactId>cucumber-junit</artifactId>
+<version>${cucumber.spring}</version>
+<scope>test</scope>
+</dependency>
+
+
+StepDefFile:
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.But;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+
+public class LoginStepDef {
+
+WebDriver webDriver;
+
+@Given("^User need to be on the Facebook login page$")
+public void user_need_to_be_on_the_facebook_login_page() throws Throwable {
+System.setProperty("webdriver.chrome.driver", "chromedriver");
+webDriver = new ChromeDriver();
+webDriver.get("https://www.facebook.com");
+
+Thread.sleep(1000L);
+}
+
+@When("^User enter user first name$")
+public void user_enter_user_first_name() throws Throwable {
+webDriver.findElement(By.xpath("//*[@id=\"u_0_c\"]")).sendKeys("Ravi");
+}
+
+@Then("^User checks if first name is present$")
+public void user_checks_if_first_name_is_present() throws Throwable {
+String strUserName = webDriver.findElement(By.xpath("//*[@id=\"u_0_c\"]")).getAttribute("value");
+Assert.assertEquals("Entered first name and obtained first name should be equal", "Ravi", strUserName);
+}
+
+@And("^User enter user last name$")
+public void user_enter_user_last_name() throws Throwable {
+}
+
+@But("^User mobile field should be blank$")
+public void user_mobile_field_should_be_blank() throws Throwable {
+}
+}
+
+
+
+
+Runner class:
+
+import org.junit.runner.RunWith;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.junit.Cucumber;
+
+@RunWith(Cucumber.class)
+@CucumberOptions(features = "classpath:features"
+, tags = {"@Story1"}
+, glue={"in.ravikalla.bddselenium.stepdefs"}
+, plugin = { "pretty", "html:target/cucumber/cucumber-html-report", "json:target/cucumber/cucumber.json",
+"junit:target/cucumber/cucumber.xml",
+"com.cucumber.listener.ExtentCucumberFormatter:target/extent-report.html" })
+public class AppTest {
+}
+
+Pico Container:
+<dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>1.2.5</version>
+    <scope>test</scope>
+</dependency>
+
+Class:
+	src/test/java/in/ravikalla/bddselenium/sharedatastepdefs/SharedData.java
+Extent Reports:
+Dependencies:
+<dependency>
+<groupId>com.vimalselvam</groupId>
+<artifactId>cucumber-extentsreport</artifactId>
+<version>3.0.1</version>
+</dependency>
+
+<dependency>
+<groupId>com.aventstack</groupId>
+<artifactId>extentreports</artifactId>
+<version>3.1.2</version>
+<scope>provided</scope>
+</dependency>
+
+Plugin:
+com.cucumber.listener.ExtentCucumberFormatter:target/ExtentReport.html
